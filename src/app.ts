@@ -4,7 +4,7 @@ import { productsRouter } from '../src/routes/products';
 import { db } from '../src/config/db'
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 //Middlewares
 app.use(express.json());
