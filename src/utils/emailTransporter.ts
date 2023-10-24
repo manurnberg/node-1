@@ -1,0 +1,9 @@
+import nodemailer from "nodemailer";
+
+export const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+        user: "manurnbergy@gmail.com",
+        pass: "jfzm otab pzek gvir"
+    }
+});

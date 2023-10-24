@@ -1,0 +1,79 @@
+@service-port = 3000
+
+###
+# #@prompt jwt
+GET http://localhost:{{service-port}}/users
+#Authorization: {{jwt}}
+
+###
+# @prompt user-id
+# @prompt jwt
+GET http://localhost:{{service-port}}/users/{{user-id}}
+Authorization: {{jwt}}
+
+###
+# @prompt user-name
+# @prompt user-email
+# @prompt username
+# @prompt user-password
+POST  http://localhost:{{service-port}}/users
+content-type: application/json
+
+{
+    "name": "{{user-name}}",
+    "email": "{{user-email}}",
+    "username": "{{username}}",
+    "password": "{{user-password}}"
+}
+
+###
+# @prompt user-id
+# @prompt user-name
+# @prompt user-email
+# @prompt jwt
+PUT  http://localhost:{{service-port}}/users/{{user-id}}
+content-type: application/json
+Authorization: {{jwt}}
+
+{
+    "name": "{{user-name}}",
+    "email": "{{user-email}}"
+}
+
+###
+# @prompt user-id
+# @prompt jwt
+DELETE http://localhost:{{service-port}}/users/{{user-id}}
+Authorization: {{jwt}}
+
+###
+# @prompt user-email
+# @prompt user-password
+POST  http://localhost:{{service-port}}/users/login
+content-type: application/json
+
+{
+    "email": "{{user-email}}",
+    "password": "{{user-password}}"
+}
+
+###
+# @prompt user-email
+POST  http://localhost:{{service-port}}/users/send-email
+content-type: application/json
+
+{
+    "email": "{{user-email}}",
+}
+
+###
+# @prompt jwt
+# @prompt user-password
+PATCH  http://localhost:{{service-port}}/users/reset-password
+content-type: application/json,
+Authorization: {{jwt}}
+
+
+{
+    "password": "{{user-password}}",
+}

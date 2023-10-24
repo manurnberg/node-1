@@ -1,0 +1,33 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivo de bloqueo de versiones
+package-lock.json
+
+# Carpeta generada por npm
+.npm
+
+# Dependencias de desarrollo (opcional, si estás utilizando Yarn)
+yarn.lock
+
+# Dependencias de desarrollo (opcional, si estás utilizando Yarn 2)
+.pnp
+.pnp.js
+
+# Directorio temporal
+/tmp/
+
+# Archivos de registro
+npm-debug.log
+yarn-error.log
+
+# Carpetas generadas por editores de código
+.vscode/
+.idea/
+*.iml
+
+# Carpetas y archivos de construcción
+dist/
+out/
+build/
+bundle.js
